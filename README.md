@@ -13,7 +13,7 @@
 
 ---
 
-> 原作者模板：https://github.com/mnjul/html-resume
+> 原作者模板：<https://github.com/mnjul/html-resume>
 
 ## 使用
 
