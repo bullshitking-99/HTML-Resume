@@ -1,13 +1,21 @@
-@page{
+@page {
   size: letter portrait;
   margin: 0;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-:root{
+html {
+  background-color: gray;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
   --page-width: 8.5in;
   --page-height: 11in;
   --main-width: 6.4in;
@@ -29,99 +37,107 @@
   --main-blocks-title-icon-offset-left: -19pt;
 }
 
-body{
+body {
   width: var(--page-width);
   height: var(--page-height);
   margin: 0;
-  font-family: "Open Sans", sans-serif; 
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 300;
   line-height: 1.3;
   color: #444;
   hyphens: auto;
+  background-color: white;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   margin: 0;
   color: #000;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-#main{
+#main {
   float: left;
   width: var(--main-width);
   padding: 0.25in 0.25in 0 0.25in;
-  font-size: 7pt;
+  font-size: 11pt;
 }
 
-#sidebar{
+#sidebar {
   float: right;
   position: relative; /* for disclaimer */
   width: var(--sidebar-width);
   height: 100%;
-  padding: 0.6in var(--sidebar-horizontal-padding);
+  padding: 0.6in 0 0.6in 0.2in;
   background-color: #f2f2f2;
-  font-size: 8.5pt;
+  font-size: 10pt;
 }
 
 /* main */
 
 /** big title **/
-#title, h1, h2{
+#title,
+h1,
+h2 {
   text-transform: uppercase;
 }
 
-#title{
+#title {
   position: relative;
   left: 0.55in;
-  margin-bottom: 0.3in;
+  margin-bottom: 0.15in;
   line-height: 1.2;
 }
 
-#title h1{
+#title h1 {
   font-weight: 300;
-  font-size: 18pt;
+  font-size: 22pt;
   line-height: 1.5;
 }
 
-#title h1 strong{
+#title h1 strong {
   margin: auto 2pt auto 4pt;
   font-weight: 600;
 }
 
-.subtitle{
-  font-size: 8pt;
+.subtitle {
+  font-size: 11pt;
 }
 
 /*** categorial blocks ***/
 
-.main-block{
+.main-block {
   margin-top: 0.1in;
 }
 
-#main h2{
+#main h2 {
   position: relative;
   top: var(--row-blocks-padding-top);
   /* XXX: 0.5px for aligning fx printing */
   left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
   font-weight: 400;
-  font-size: 11pt;
+  font-size: 13pt;
   color: #555;
 }
 
-#main h2 > i{
+#main h2 > i {
   /* use absolute position to prevent icon's width from misaligning title */
   /* assigning a fixed width here is no better due to needing to align decorator
      line too */
   position: absolute;
-  left: var(--main-blocks-title-icon-offset-left);
+  left: calc(var(--main-blocks-title-icon-offset-left) - 1pt);
+  top: 3pt;
   z-index: 1; /* over decorator line */
   color: #444;
 }
 
-#main h2::after{ /* extends the decorator line */
+#main h2::after {
+  /* extends the decorator line */
   height: calc(var(--row-blocks-padding-top) * 2);
   position: relative;
   top: calc(-1 * var(--row-blocks-padding-top));
@@ -132,57 +148,58 @@ li{
   z-index: 0;
   line-height: 0;
   font-size: 0;
-  content: ' ';
+  content: " ";
 }
 
 /**** minor tweaks on the icon fonts ****/
-#main h2 > .fa-graduation-cap{
+/* #main h2 > .fa-graduation-cap {
   left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
   top: 2pt;
 }
 
-#main h2 > .fa-suitcase{
+#main h2 > .fa-suitcase {
   top: 1pt;
 }
 
-#main h2 > .fa-folder-open{
-  top: 1.5pt;
-}
+#main h2 > .fa-folder-open {
+  top: 3pt;
+} */
 
 /**** individual row blocks (date - decorator - details) ****/
 
-.blocks{
+.blocks {
   display: flex;
   flex-flow: row nowrap;
 }
 
-.blocks > div{
+/* .blocks > div {
   padding-top: var(--row-blocks-padding-top);
-}
+} */
 
-.date{
+.date {
   flex: 0 0 var(--date-block-width);
-  padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
+  padding-top: calc(var(--row-blocks-padding-top) + 2.5pt);
   padding-right: var(--decorator-horizontal-margin);
-  font-size: 7pt;
+  font-size: 9pt;
   text-align: right;
   line-height: 1;
 }
 
-.date span{
+.date span {
   display: block;
 }
 
-.date span:nth-child(2)::before{
+.date span:nth-child(2)::before {
   position: relative;
   top: 1pt;
-  right: 5.5pt;
+  right: 10pt;
   display: block;
   height: 10pt;
-  content: '|';
+  content: "|";
+  padding-bottom: 2pt;
 }
 
-.decorator{
+.decorator {
   flex: 0 0 0;
   position: relative;
   width: 2pt;
@@ -199,78 +216,87 @@ li{
  *
  */
 
-.decorator::before{
+.decorator::before {
+  content: " ";
+  display: block;
   position: absolute;
   top: var(--decorator-outer-offset-top);
-  left: var(--decorator-outer-offset-left);
-  content: ' ';
-  display: block;
+  left: -3pt;
   width: var(--decorator-outer-dim);
   height: var(--decorator-outer-dim);
   border-radius: calc(var(--decorator-outer-dim) / 2);
   background-color: #fff;
 }
 
-.decorator::after{
+.decorator::after {
+  content: " ";
+  display: block;
   position: absolute;
   top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
-  left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
-  content: ' ';
-  display: block;
+  left: -3pt;
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
+  height: calc(
+    var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)
+  );
+  border-radius: calc(
+    (var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2
+  );
   background-color: #555;
 }
 
-.blocks:last-child .decorator{ /* slightly shortens it */
-  margin-bottom: 0.25in;
+.blocks:last-child .decorator {
+  /* slightly shortens it */
+  margin-bottom: 0.15in;
 }
 
 /***** fine-tunes on the details block where the real juice is *****/
 
-.details{
+.details {
   flex: 1 0 0;
   padding-left: var(--decorator-horizontal-margin);
-  padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important; /* not sure why but this is needed for better alignment */
+  padding-top: calc(
+    var(--row-blocks-padding-top) - 0.5pt
+  ) !important; /* not sure why but this is needed for better alignment */
 }
 
-.details header{
+.details header {
   color: #000;
 }
 
-.details h3{
-  font-size: 9pt;
+.details h3 {
+  font-size: 11pt;
 }
 
-.main-block:not(.concise) .details div{
-  margin: 0.18in 0 0.1in 0; 
+.main-block:not(.concise) .details div {
+  margin: 0.18in 0 0.1in 0;
 }
 
-.main-block:not(.concise) .blocks:last-child .details div{
+.main-block:not(.concise) .blocks:last-child .details div {
   margin-bottom: 0;
 }
 
-.main-block.concise .details div:not(.concise){
-  /* use padding to work around the fact that margin doesn't affect floated
-     neighboring elements */
-  padding: 0.05in 0 0.07in 0;
-}
-
-.details .place{
+.details .place {
   float: left;
   font-size: 7.5pt;
+  margin: 5px 0;
 }
 
-.details .location{
+.details .place code {
+  font-family: inherit;
+  padding: 2px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.details .location {
   float: right;
 }
 
-.details div{
+.details div {
   clear: both;
 }
 
-.details .location::before{
+.details .location::before {
   display: inline-block;
   position: relative;
   right: 3pt;
@@ -284,73 +310,83 @@ li{
 
 /***** fine-tunes on the lists... *****/
 
-#main ul{
+#main ul {
   padding-left: 0.07in;
   margin: 0.08in 0;
 }
 
-#main li{
+#main li {
   margin: 0 0 0.025in 0;
 }
 
 /****** customize list symbol style ******/
-#main li::before{
+#main li::before {
   position: relative;
   margin-left: -4.25pt;
-  content: '• ';
+  font-size: 16px;
+  content: "• ";
 }
 
-.details .concise ul{
+.details .concise ul {
   margin: 0 !important;
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
 }
 
-.details .concise li{
+.details .concise li {
   margin: 0 !important;
 }
 
-.details .concise li{
+.details .concise li {
   margin-left: 0 !important;
 }
 
-
-
 /* sidebar */
 
-#sidebar h1{
-  font-weight: 400;
-  font-size: 11pt;
+#sidebar h1 {
+  font-weight: 500;
+  font-size: 12pt;
 }
 
-.side-block{
-  margin-top: 0.5in; 
+.side-block {
+  margin-top: 0.5in;
 }
 
-#contact ul{
+#contact ul {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-top: 0.05in;
   padding-left: 0;
-  font-family: "Source Code Pro";
   font-weight: 400;
   line-height: 1.75;
+  font-size: 9pt;
 }
 
-#contact li > i{
-  width: 9pt; /* for text alignment */
-  text-align: right;
+#contact li > i {
+  width: 11pt; /* for text alignment */
+  text-align: center;
+  margin-right: 2pt;
 }
 
-#skills{
+#skills {
   line-height: 1.5;
 }
 
-#skills ul{
+#skills ul {
   margin: 0.05in 0 0.15in;
   padding: 0;
 }
 
-#disclaimer{
+#skills ul b {
+  font-size: 10.5pt;
+}
+
+#skills ul li {
+  opacity: 0.9;
+}
+
+#disclaimer {
   position: absolute;
   bottom: var(--sidebar-horizontal-padding);
   right: var(--sidebar-horizontal-padding);
@@ -361,7 +397,7 @@ li{
   color: #777;
 }
 
-#disclaimer code{
+#disclaimer code {
   color: #666;
   font-family: "Source Code Pro";
   font-weight: 400;
