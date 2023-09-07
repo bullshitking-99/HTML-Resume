@@ -2,19 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../dep/normalize.css/normalize.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../dep/Font-Awesome/css/font-awesome.css"
-    />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/092fa88df7.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body lang="zh">
+  <body lang="zh" id="main-page">
     <section id="main">
       <header id="title">
         <h1>李名河</h1>
@@ -26,14 +20,144 @@
           软件工程硕士 (2021-2024)</span
         >
       </header>
-      <section name="Project" class="main-block">
-        <h2><i class="fa fa-folder-open"></i>个人项目</h2>
-        <section name="InkBlogger" class="blocks">
-          <div class="date"></div>
+      <section name="工作经历" class="main-block concise">
+        <h2><i class="fa fa-building"></i>工作经历</h2>
+        <section name="快手" class="blocks">
+          <div class="date"><span>2023</span></div>
           <div class="decorator"></div>
           <div class="details">
             <header>
-              <h3>InkBlogger博客模板</h3>
+              <h3>快手·本地生活</h3>
+              <span class="place">
+                <code>react & react native</code>
+                <code>微前端</code>
+                <code>低代码</code>
+              </span>
+              <span class="location">北京</span>
+            </header>
+            <div>
+              <ul>
+                <li>fuck everything</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section name="华测前端实习" class="blocks">
+          <div class="date"><span>2021</span></div>
+          <div class="decorator"></div>
+          <div class="details">
+            <header>
+              <h3>华测导航·软件部</h3>
+              <span class="place">
+                <code>vue</code>
+                <code>bootstrap</code>
+                <code>jQuery</code>
+              </span>
+              <span class="location">武汉</span>
+            </header>
+            <div>
+              <ul>
+                <li>后台管理系统需求开发</li>
+                <li>参与官网seo</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section name="开源社区" class="main-block">
+        <h2><i class="fa-solid fa-hand-holding-hand"></i>开源社区</h2>
+        <section name="toc-creator" class="blocks">
+          <div class="date"><span>2023</span></div>
+          <div class="decorator"></div>
+          <div class="details">
+            <header>
+              <h3>
+                <a
+                  href="https://www.npmjs.com/package/toc-creator"
+                  target="_blank"
+                  >toc-creator</a
+                >
+              </h3>
+              <span class="place">
+                <code>Vue3</code>
+                <code>TypeScript</code>
+              </span>
+              <span class="location">npm</span>
+            </header>
+            <div>
+              <ul>
+                <li>自动生成的可拖拽目录</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section name="vue3-img-viewer" class="blocks">
+          <div class="date"><span>2023</span></div>
+          <div class="decorator"></div>
+          <div class="details">
+            <header>
+              <h3>
+                <a
+                  href="https://www.npmjs.com/package/vue3-img-viewer"
+                  target="_blank"
+                >
+                  vue3-img-viewer</a
+                >
+              </h3>
+              <span class="place">
+                <code>Vue3</code>
+                <code>TypeScript</code>
+              </span>
+              <span class="location">npm</span>
+            </header>
+            <div>
+              <ul>
+                <li>轻量、平滑的图片预览组件</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section name="技术博客" class="blocks">
+          <div class="date"><span>2021</span><span>2023</span></div>
+          <div class="decorator"></div>
+          <div class="details">
+            <header>
+              <h3>
+                <a
+                  href="https://juejin.cn/user/4402870941397416"
+                  target="_blank"
+                  >技术博客</a
+                >
+              </h3>
+              <span class="place">
+                <code>JavaScript</code>
+                <code>vue</code>
+                <code>npm</code>
+              </span>
+              <span class="location">掘金</span>
+            </header>
+            <div>
+              <ul>
+                <li>手写节流与防抖？生动展示装饰器原理与实践</li>
+                <li>和我一起一步步写个页面通用的toc目录组件</li>
+                <li>还在用typeof、instanceof？是时候给你的类型检查升个级了</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section name="Project" class="main-block">
+        <h2><i class="fa fa-folder-open"></i>个人项目</h2>
+        <section name="InkBlogger" class="blocks">
+          <div class="date"><span>2023</span></div>
+          <div class="decorator"></div>
+          <div class="details">
+            <header>
+              <h3>
+                <a href="http://minghe.fun" target="_blank"
+                  >InkBlogger博客模板</a
+                >
+              </h3>
               <span class="place">
                 <code>Vue3</code>
                 <code>Vite</code>
@@ -43,28 +167,26 @@
             </header>
             <div>
               <ul>
-                <li>开箱即用的个人博客模板，简约灵动的样式与齐全的功能</li>
-                <li>
-                  80%组件为原生语言编写，以兼顾体积与体验，其余组件基于开源组件库二次封装
-                </li>
-                <li>
-                  自制vite plugin -
-                  md2vue，将markdown文件转换为模板内置组件，提升阅读体验
-                </li>
-                <li>
-                  自制基于Notions
-                  与Express.js的Comments评论组件，实现访客留言评论
-                </li>
+                <li>使用自制的拖拽目录和图片预览组件优化博客浏览体验</li>
+                <li>通过统一的用户信息和内容接口达到开箱即用</li>
+                <li>使用CSS变量进行主题切换，支持响应式布局</li>
+                <li>通过动态导入与打包优化减少请求包体积，降低首屏加载时间</li>
               </ul>
             </div>
           </div>
         </section>
-        <section name="GymBookSystem" class="blocks">
-          <div class="date"></div>
+        <!-- <section name="GymBookSystem" class="blocks">
+          <div class="date"><span>2022</span></div>
           <div class="decorator"></div>
           <div class="details">
             <header>
-              <h3>GymBookSystem</h3>
+              <h3>
+                <a
+                  href="https://bullshitking-99.github.io/GymBookSystem/"
+                  target="_blank"
+                  >GymBookSystem</a
+                >
+              </h3>
               <span class="place">
                 <code>Vue3</code>
                 <code>Vite</code>
@@ -74,17 +196,15 @@
             </header>
             <div>
               <ul>
-                <li>
-                  面向北京工业大学师生的运动场馆预约管理系统，替代旧版学校软件，使用人数超过百人
-                </li>
-                <li>除表单页外其余组件均为自主设计与编写，提升美观与易用度</li>
-                <li>自编写如防抖、节流等功能函数，提升表单组件使用体验</li>
+                <li>面向北京工业大学师生的运动场馆预约管理</li>
+                <li>登录校验、持久化..</li>
+                <li>通过防抖、节流等功能函数，提升表单组件使用体验</li>
               </ul>
             </div>
           </div>
         </section>
         <section name="时空小胶囊" class="blocks">
-          <div class="date"></div>
+          <div class="date"><span>2021</span><span>2022</span></div>
           <div class="decorator"></div>
           <div class="details">
             <header>
@@ -97,13 +217,13 @@
             </header>
             <div>
               <ul>
-                <li>基于时空定位聊天室的后台管理系统</li>
+                <li>基于时空定位的聊天室后台管理系统</li>
               </ul>
             </div>
           </div>
-        </section>
+        </section> -->
         <section name="北工大掌上教务" class="blocks">
-          <div class="date"></div>
+          <div class="date"><span>2021</span></div>
           <div class="decorator"></div>
           <div class="details">
             <header>
@@ -122,95 +242,32 @@
           </div>
         </section>
       </section>
-      <section name="开源社区" class="main-block">
-        <h2><i class="fa fa-circle-o-notch"></i>开源社区</h2>
-        <section name="Fighting-Design组件库" class="blocks">
-          <div class="date"><span>2022</span></div>
-          <div class="decorator"></div>
-          <div class="details">
-            <header>
-              <h3>Fighting-Design组件库</h3>
-              <span class="place">
-                <code>Vue3</code>
-                <code>Vite</code>
-                <code>TypeScript</code>
-              </span>
-              <span class="location">Github Star(277)</span>
-            </header>
-            <div>
-              <ul>
-                <li>
-                  一款使用 TypeScript + Template 编写的 Vue3 轻量级组件库。
-                </li>
-                <li>参与组件设计与编写、文档翻译等工作</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section name="技术博客" class="blocks">
-          <div class="date"><span>2021</span><span>2022</span></div>
-          <div class="decorator"></div>
-          <div class="details">
-            <header>
-              <h3>技术博客</h3>
-              <span class="place">
-                <code>JavaScript</code>
-                <code>Vue</code>
-                <code>CSS</code>
-              </span>
-              <span class="location">掘金 read(2000+)</span>
-            </header>
-            <div>
-              <ul>
-                <li>
-                  <a href="https://juejin.cn/post/7146496787757400100"
-                    >还在用typeof、instanceof？是时候给你的类型检查升个级了</a
-                  >
-                </li>
-                <li>
-                  <a href="https://juejin.cn/post/7142768444478341128"
-                    >手写节流与防抖？生动展示装饰器原理与实践</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section name="工作经历" class="main-block concise">
-        <h2><i class="fa fa-building"></i>工作经历</h2>
-        <section name="华测前端实习" class="blocks">
-          <div class="date"><span>2021</span></div>
-          <div class="decorator"></div>
-          <div class="details">
-            <header>
-              <h3>上海华测导航</h3>
-              <span class="place">
-                <code>软件部前端实习</code>
-              </span>
-              <span class="location">武汉</span>
-            </header>
-            <div>
-              <ul>
-                <li>
-                  参与官网编写(bootstrap/SEO)和后台管理系统的升级维护(Vue)
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </section>
     </section>
     <aside id="sidebar">
       <div class="side-block">
         <h1>名片</h1>
         <ul>
-          <li><i class="fa fa-tv"></i><a href=""> leeminghe.fun</a></li>
+          <li>
+            <i class="fa-solid fa-blog"></i>
+            <a href="http://minghe.fun/" target="_blank">门户/minghe.fun</a>
+          </li>
+          <li>
+            <i class="fa fa-book"></i>
+            <a href="https://juejin.cn/user/4402870941397416" target="_blank"
+              >掘金/迷途小前端_99</a
+            >
+          </li>
           <li>
             <i class="fa fa-github"></i>
-            <a href="https://github.com/bullshitking-99">
-              github.com/MingheLee
-            </a>
+            <a href="https://github.com/bullshitking-99" target="_blank"
+              >github/bullshitking-99</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-npm"></i>
+            <a href="https://www.npmjs.com/~minghe-lee" target="_blank"
+              >npm/minghe-lee</a
+            >
           </li>
         </ul>
       </div>
@@ -221,28 +278,8 @@
           <li><i class="fa fa-phone"></i> 15549925550</li>
         </ul>
       </div>
-      <div class="side-block" id="skills">
+      <!-- <div class="side-block" id="skills">
         <h1>技能</h1>
-        <ul>
-          <b>UI</b>
-          <li>figma/蓝湖</li>
-        </ul>
-        <ul>
-          <b>UML</b>
-          <li>数据流图/时序图/活动图..</li>
-        </ul>
-        <ul>
-          <b>HTML</b>
-          <li>语义化</li>
-          <li>Canvas/SVG</li>
-          <li>drag API..</li>
-        </ul>
-        <ul>
-          <b>CSS</b>
-          <li>transition/animation</li>
-          <li>响应性</li>
-          <li>Sass/TailwindCSS</li>
-        </ul>
         <ul>
           <b>JavaScript</b>
           <li>DOM/ES6</li>
@@ -252,16 +289,49 @@
           <li>异步编程</li>
           <li>装饰器模式..</li>
         </ul>
-        <ul>
-          <b>MVVM (Vue)</b>
-          <li>Vuex/Pinia/VueRouter..</li>
-        </ul>
-        <ul>
-          <b>构建工具</b>
-          <li>Webpack/Vite</li>
-        </ul>
-      </div>
-      <div class="side-block" id="disclaimer">该简历由HTML&CSS编写</div>
+      </div> -->
+      <!-- <div class="side-block" id="disclaimer">Build in Pure CSS</div> -->
     </aside>
   </body>
+  <script src="/jQuery.js"></script>
+  <script>
+    //根据容器ID来渲染行内样式，避免长时间卡顿
+    let translateStyle = (contentId) => {
+      const sheets = document.styleSheets;
+      const sheetsArry = Array.from(sheets);
+      const $content = $("#" + contentId);
+      sheetsArry.forEach((sheetContent) => {
+        const { rules, cssRules } = sheetContent;
+        //cssRules兼容火狐
+        const rulesArry = Array.from(rules || cssRules || []);
+        rulesArry.forEach((rule) => {
+          const { selectorText, style, styleMap } = rule;
+          //全局样式不处理
+          if (selectorText !== "*") {
+            //兼容某些样式在转换的时候会报错
+            try {
+              const select = $content.find(selectorText);
+              select.each((domIndex) => {
+                const dom = select[domIndex];
+                let i = 0;
+                const domStyle = window.getComputedStyle(dom, null);
+                while (style[i]) {
+                  //样式表里的className是驼峰式，转换下便对应上了
+                  const newName = style[i].replace(/-\w/g, function (x) {
+                    return x.slice(1).toUpperCase();
+                  });
+                  $(dom).css(style[i], domStyle[newName]);
+                  i++;
+                }
+              });
+            } catch (e) {
+              console.log("转换成行内样式失败");
+            }
+          }
+        });
+      });
+    };
+
+    translateStyle("main-page");
+  </script>
 </html>
